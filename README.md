@@ -10,7 +10,7 @@ sudo rpm -ivh http://dl.fedoraproject.org/pub/epel/5/x86_64/epel-release-5-4.noa
 sudo yum install rpm-build rpmdevtools
 rpmdev-setuptree
 ./misc/copy-for-building.sh
-wget https://github.com/etsy/statsd/archive/v0.7.2.tar.gz -O ~/rpmbuild/SOURCES/statsd-0.7.2.tar.gz
+wget https://github.com/cPanelScott/statsd/archive/v0.7.2a.tar.gz -O ~/rpmbuild/SOURCES/statsd-0.7.2a.tar.gz
 rpmbuild --clean -ba ~/rpmbuild/SPECS/statsd.spec # Add "--with systemd" for CentOS7
 sudo yum install --nogpgcheck ~/rpmbuild/RPMS/noarch/statsd-0.7.2-1.noarch.rpm
 >>>>>>> Stashed changes
