@@ -33,11 +33,12 @@ Simple daemon for easy stats aggregation
 %build
 
 %install
-%{__mkdir_p} %{buildroot}/usr/share/statsd/backends %{buildroot}/usr/share/statsd/lib %{buildroot}/usr/share/statsd/bin
+%{__mkdir_p} %{buildroot}/usr/share/statsd/backends %{buildroot}/usr/share/statsd/lib %{buildroot}/usr/share/statsd/bin %{buildroot}/usr/share/statsd/servers
 %{__install} -Dp -m0644 stats.js %{buildroot}/usr/share/statsd/
 %{__install} -Dp -m0644 lib/config.js lib/logger.js lib/set.js lib/process_metrics.js %{buildroot}/usr/share/statsd/lib/
 %{__install} -Dp -m0644 lib/helpers.js lib/process_mgmt.js lib/mgmt_console.js %{buildroot}/usr/share/statsd/lib/
-%{__install} -Dp -m0644 backends/{console.js,graphite.js} %{buildroot}/usr/share/statsd/backends/
+%{__install} -Dp -m0644 backends/{console.js,graphite.js,repeater.js} %{buildroot}/usr/share/statsd/backends/
+%{__install} -Dp -m0644 servers/{udp.js,tcp.js} %{buildroot}/usr/share/statsd/servers/
 %{__install} -Dp -m0655 bin/statsd %{buildroot}/usr/share/statsd/bin/
 
 %{__install} -Dp -m0644 %{SOURCE4} %{buildroot}%{_sysconfdir}/default/%{name}
