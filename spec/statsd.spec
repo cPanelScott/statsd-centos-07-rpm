@@ -1,7 +1,7 @@
 %bcond_with systemd
 
 Name:           statsd
-Version:        0.7.2
+Version:        0.7.2a
 Release:        1%{?dist}
 Summary:        monitoring daemon, that aggregates events received by udp in 10 second intervals
 Group:          Applications/Internet
@@ -114,6 +114,8 @@ service %{name} start
 %ghost %{_localstatedir}/lock/subsys/%{name}
 
 %changelog
+* Wed Dec 10 2014 Scott O'Neil <scott@cpanel.net> 0.7.2a-1
+- Changing upstream to cPanelScott instead of etsy
 * Wed Dec 10 2014 Scott O'Neil <scott@cpanel.net> 0.7.2-1
 - Updating from upstream
 * Mon Dec  1 2014 Scott O'Neil <scott@cpanel.net> 0.7.0-4
